@@ -7,39 +7,36 @@
     <title>Home</title>
 
     {% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset('styles/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('styles/app.css') }}">
     {% endblock %}
 
 </head>
 <body>
 <!-- Menu -->
-    <nav class="bg-gray-800">
-        <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-            <div class="relative flex items-center justify-between h-16">
-                <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-                    <div class="hidden sm:block sm:ml-6">
-                        <div class="flex space-x-4">
-                            <a href="{{ path('app_home') }}" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
-                            <a href="{{ path('about_us') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About Us</a>
-                            <a href="{{ path('app_wish') }}" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Idea List</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
+{% block header %}
+    <header class="header">
+        {% include "partials/header.html.twig" %}
+    </header>
+{% endblock %}
 
 <!-- Content -->
-    <div class="h-24 min-h-0 hover:min-h-full">
-        {% block body %}{% endblock %}
-        {{ encore_entry_script_tags('app') }}
-    </div>
+<div class="h-24 min-h-0 hover:min-h-full">
+    {% block body %}
+        <div class="card">
+            <h1 class="text-3xl font-bold text-gradient-future">Welcome to the Future</h1>
+            <p class="mt-4">Experience the next generation of web design.</p>
+            <button class="btn-primary mt-6">Get Started</button>
+        </div>
+    {% endblock %}
+    {{ encore_entry_script_tags('app') }}
+</div>
 
 <!-- Footer -->
-    <footer class="bg-gray-800 text-white p-4">
-        <div class="container mx-auto text-center">
-            <p>&copy; 2024 My Website. All rights reserved.</p>
-        </div>
+{% block footer %}
+    <footer class="footer">
+        {% include "partials/footer.html.twig" %}
     </footer>
+{% endblock %}
+
 </body>
 </html>

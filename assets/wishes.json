@@ -1,0 +1,5 @@
+[
+  { "id": 1, "title": "Voyage à Paris", "description": "Visiter la tour Eiffel et le Louvre." },
+  { "id": 2, "title": "Cours de cuisine", "description": "Apprendre à cuisiner des plats italiens." },
+  { "id": 3, "title": "Randonnée en montagne", "description": "Explorer les Alpes pendant une semaine." }
+]
